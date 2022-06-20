@@ -1,3 +1,0 @@
-[
-    "ALTER TABLE sprint_users ADD COLUMN IF NOT EXISTS sprint_type VARCHAR(255) NULL"
-]

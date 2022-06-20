@@ -1,19 +1,38 @@
-#!/usr/bin/env python3
-import discord, json, lib
-from bot import WriterBot
-from discord.ext import commands
-from discord_slash import SlashCommand
+import interactions, os
+from interactions.ext.autosharder import ShardedClient
+from interactions.ext.tasks import IntervalTrigger, create_task
+from models.database import Database
+from models.helper import Helper
+from models.task import Task
+from config import TOKEN, APP_DIR
 
-# Load the settings for initial setup
-config = lib.get('./settings.json')
+bot = ShardedClient(token=TOKEN)
+helper = Helper.instance()
+db = Database.instance()
 
-# Load the Bot object
-status = discord.Game( 'Booting up...' )
-bot = WriterBot(command_prefix=WriterBot.load_prefix, activity=status)
-slash = SlashCommand(bot, sync_commands=True)
+def load_commands(bot):
+    """
+    Load all of the commands in the exts/ directory.
+    :param bot:
+    :return:
+    """
+    for file in os.listdir(APP_DIR + '/exts'):
+        if not file.startswith('_'):
+            ext = file.replace('.py', '')
+            bot.load(f"exts.{ext}")
+            helper.log(f"[BOT] Loaded command extension {ext}")
 
-# Load all commands
-bot.load_commands()
+helper.log("[BOT] Beginning boot process")
 
-# Start the bot
-bot.run(config.token)
+db.install()
+helper.log("[BOT] Database tables installed")
+
+load_commands(bot)
+helper.log("[BOT] Commands loaded")
+
+Task.setup(bot)
+helper.log("[BOT] Tasks loaded")
+
+Task.all.start(bot)
+
+bot.start()
