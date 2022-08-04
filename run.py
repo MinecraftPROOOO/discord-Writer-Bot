@@ -1,4 +1,4 @@
-import interactions, os
+import interactions, logging, os
 from interactions.ext.autosharder import ShardedClient
 from interactions.ext.tasks import IntervalTrigger, create_task
 from models.database import Database
@@ -9,6 +9,8 @@ from config import TOKEN, APP_DIR
 bot = ShardedClient(token=TOKEN)
 helper = Helper.instance()
 db = Database.instance()
+
+logging.basicConfig(format='%(asctime)s - %(message)s')
 
 def load_commands(bot):
     """
