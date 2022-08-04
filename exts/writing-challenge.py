@@ -54,7 +54,6 @@ class ChallengeCommand(interactions.ext.autosharder.ShardedExtension):
                 type=interactions.OptionType.SUB_COMMAND,
             )
         ],
-        scope=[730804290595061873,503593039541960704],
     )
     async def _challenge(self, context: interactions.CommandContext, sub_command: str, difficulty: str = None, length: int = None):
         """

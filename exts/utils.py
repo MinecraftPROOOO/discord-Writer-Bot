@@ -21,7 +21,6 @@ class Utils(interactions.ext.autosharder.ShardedExtension):
     @interactions.extension_command(
         name="help",
         description="Help information on how to use the bot",
-        scope=[730804290595061873,503593039541960704]
     )
     async def _help(self, context: interactions.CommandContext):
         """
@@ -50,7 +49,6 @@ class Utils(interactions.ext.autosharder.ShardedExtension):
     @interactions.extension_command(
         name="ping",
         description="Displays latency between client and bot",
-        scope=[730804290595061873,503593039541960704]
     )
     async def _ping(self, context: interactions.CommandContext):
         """
@@ -93,7 +91,6 @@ class Utils(interactions.ext.autosharder.ShardedExtension):
     @interactions.extension_command(
         name="info",
         description="Display information and statistics about the bot",
-        scope=[730804290595061873,503593039541960704]
     )
     async def _info(self, context: interactions.CommandContext):
         """
@@ -150,7 +147,6 @@ class Utils(interactions.ext.autosharder.ShardedExtension):
     @interactions.extension_command(
         name="profile",
         description="Displays your user profile",
-        scope=[730804290595061873,503593039541960704]
     )
     async def _profile(self, context: interactions.CommandContext):
         """
@@ -212,7 +208,6 @@ class Utils(interactions.ext.autosharder.ShardedExtension):
     @interactions.extension_command(
         name="reset",
         description="Reset some or all of your user statistics",
-        scope=[730804290595061873,503593039541960704],
         options=[
             interactions.Option(
                 name="stat",
@@ -284,7 +279,6 @@ class Utils(interactions.ext.autosharder.ShardedExtension):
     @interactions.extension_command(
         name="setting",
         description="Setting commands",
-        scope=[730804290595061873,503593039541960704],
         options=[
             interactions.Option(
                 name="list",
@@ -375,7 +369,6 @@ class Utils(interactions.ext.autosharder.ShardedExtension):
     @interactions.extension_command(
         name="mysetting",
         description="User setting commands",
-        scope=[730804290595061873,503593039541960704],
         options=[
             interactions.Option(
                 name="list",
@@ -465,7 +458,6 @@ class Utils(interactions.ext.autosharder.ShardedExtension):
     @interactions.extension_command(
         name="invite",
         description="Generate the invite link to invite the bot to another server",
-        scope=[730804290595061873,503593039541960704]
     )
     async def _invite(self, context: interactions.CommandContext):
         """

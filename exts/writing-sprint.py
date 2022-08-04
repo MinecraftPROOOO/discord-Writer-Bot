@@ -24,7 +24,6 @@ class SprintCommand(interactions.ext.autosharder.ShardedExtension):
     @interactions.extension_command(
         name="sprint",
         description="Start and interact with writing sprints",
-        scope=[730804290595061873,503593039541960704],
         options=[
             interactions.Option(
                 name="for",

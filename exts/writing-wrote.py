@@ -29,7 +29,6 @@ class WroteCommand(interactions.ext.autosharder.ShardedExtension):
                 required=False
             )
         ],
-        scope=[730804290595061873,503593039541960704],
     )
     async def _wrote(self, context: interactions.CommandContext, amount: int, project: str = None):
         """

@@ -20,7 +20,6 @@ class GoalCommand(interactions.ext.autosharder.ShardedExtension):
     @interactions.extension_command(
         name="goal",
         description="Manage your writing goals",
-        scope=[730804290595061873,503593039541960704],
         options=[
             interactions.Option(
                 name="set",

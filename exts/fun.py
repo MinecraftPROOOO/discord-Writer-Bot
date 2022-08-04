@@ -38,7 +38,6 @@ class Fun(interactions.ext.autosharder.ShardedExtension):
     @interactions.extension_command(
         name="flip",
         description="Flip a coin",
-        scope=[730804290595061873,503593039541960704]
     )
     async def _flip(self, context: interactions.CommandContext):
         """
@@ -64,7 +63,6 @@ class Fun(interactions.ext.autosharder.ShardedExtension):
     @interactions.extension_command(
         name="8ball",
         description="Ask the magic 8-ball a question",
-        scope=[730804290595061873,503593039541960704],
         options=[
             interactions.Option(
                 name="question",
@@ -96,7 +94,6 @@ class Fun(interactions.ext.autosharder.ShardedExtension):
     @interactions.extension_command(
         name="roll",
         description="Roll one or more dice and get the result",
-        scope=[730804290595061873,503593039541960704],
         options=[
             interactions.Option(
                 name="dice",
@@ -157,7 +154,6 @@ class Fun(interactions.ext.autosharder.ShardedExtension):
     @interactions.extension_command(
         name="reassure",
         description="Send a random reassuring message to another user or yourself",
-        scope=[730804290595061873,503593039541960704],
         options=[
             interactions.Option(
                 name="who",

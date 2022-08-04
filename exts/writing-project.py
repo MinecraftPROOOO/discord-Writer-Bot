@@ -249,7 +249,6 @@ class ProjectCommand(interactions.ext.autosharder.ShardedExtension):
                 ]
             )
         ],
-        scope=[730804290595061873,503593039541960704],
     )
     async def _project(self, context: interactions.CommandContext, sub_command: str,
                        shortname: str = None, title: str = None, genre: str = None, status: str = None,
