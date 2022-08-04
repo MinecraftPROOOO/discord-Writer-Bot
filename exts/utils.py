@@ -9,6 +9,8 @@ from models.guild import Guild
 from models.user import User
 from config import VERSION, SUPPORT_SERVER, INVITE_URL, WIKI_URL
 
+start_time = datetime.now()
+
 class Utils(interactions.ext.autosharder.ShardedExtension):
 
     COMMAND_LIST = ['info', 'invite', 'ping', 'profile', 'reset', '8ball', 'flip', 'reassure', 'roll', 'challenge', 'generate', 'goal', 'project', 'sprint', 'wrote']
@@ -107,9 +109,7 @@ class Utils(interactions.ext.autosharder.ShardedExtension):
             return await context.send('Your guild has disabled this command')
 
         # Work out stats to display.
-        now = time.time()
-        uptime = int(round(now - self.bot.start_time))
-        uptime = f"{timedelta(seconds=uptime)}"
+        uptime = f"<t:{round(start_time.timestamp())}:R>"
         sprints = self.db.get('sprints', {'completed': 0}, ['COUNT(id) as cnt'])['cnt']
 
         stats = []
