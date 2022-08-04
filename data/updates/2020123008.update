@@ -1,3 +1,0 @@
-[
-    "ALTER TABLE projects ADD COLUMN IF NOT EXISTS completed BIGINT DEFAULT 0"
-]

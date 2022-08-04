@@ -5,7 +5,7 @@ CREATE TABLE IF NOT EXISTS projects (
     shortname TEXT NOT NULL,
     words INTEGER DEFAULT 0,
     completed BIGINT DEFAULT 0,
-    status VARCHAR(255) DEFAULT 'progress',
+    status VARCHAR(255) NULL,
     genre VARCHAR(255) NULL,
     description TEXT NULL,
     link VARCHAR(255) NULL,
