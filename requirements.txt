@@ -6,3 +6,4 @@ validator_collection==1.5.0
 discord-py-interactions==4.2.1
 interactions-autosharder==1.0.2
 python-dotenv
+git+https://github.com/Catalyst4222/interactions-tasks
