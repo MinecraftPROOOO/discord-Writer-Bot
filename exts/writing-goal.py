@@ -10,7 +10,7 @@ GOAL_TYPE_MONTHLY = 'monthly'
 GOAL_TYPE_YEARLY = 'yearly'
 GOAL_TYPES = [GOAL_TYPE_DAILY, GOAL_TYPE_WEEKLY, GOAL_TYPE_MONTHLY, GOAL_TYPE_YEARLY]
 
-class GoalCommand(interactions.ext.autosharder.ShardedExtension):
+class GoalCommand(interactions.Extension):
 
     def __init__(self, client: interactions.Client):
         self.db = Database.instance()

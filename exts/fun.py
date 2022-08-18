@@ -3,7 +3,7 @@ import random
 from models.guild import Guild
 from models.helper import Helper
 
-class Fun(interactions.ext.autosharder.ShardedExtension):
+class Fun(interactions.Extension):
 
     ROLL_MAX_SIDES = 1000000
     ROLL_MAX_ROLLS = 100

@@ -5,7 +5,7 @@ from models.guild import Guild
 from models.helper import Helper
 from models.user import User
 
-class ChallengeCommand(interactions.ext.autosharder.ShardedExtension):
+class ChallengeCommand(interactions.Extension):
 
     def __init__(self, client: interactions.Client):
         self.db = Database.instance()

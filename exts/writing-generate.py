@@ -5,7 +5,7 @@ from models.guild import Guild
 from models.helper import Helper
 from models.user import User
 
-class GenerateCommand(interactions.ext.autosharder.ShardedExtension):
+class GenerateCommand(interactions.Extension):
 
     def __init__(self, client: interactions.Client):
         self.db = Database.instance()

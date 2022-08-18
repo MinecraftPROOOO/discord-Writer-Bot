@@ -5,7 +5,7 @@ from models.helper import Helper
 from models.project import Project
 from models.user import User
 
-class WroteCommand(interactions.ext.autosharder.ShardedExtension):
+class WroteCommand(interactions.Extension):
 
     def __init__(self, client: interactions.Client):
         self.db = Database.instance()

@@ -8,7 +8,7 @@ from models.sprint import Sprint
 from models.task import Task
 from models.user import User
 
-class SprintCommand(interactions.ext.autosharder.ShardedExtension):
+class SprintCommand(interactions.Extension):
 
     DEFAULT_LENGTH = 20
     DEFAULT_DELAY = 2

@@ -11,7 +11,7 @@ from config import VERSION, SUPPORT_SERVER, INVITE_URL, WIKI_URL
 
 start_time = datetime.now()
 
-class Utils(interactions.ext.autosharder.ShardedExtension):
+class Utils(interactions.Extension):
 
     COMMAND_LIST = ['info', 'invite', 'ping', 'profile', 'reset', '8ball', 'flip', 'reassure', 'roll', 'challenge', 'generate', 'goal', 'project', 'sprint', 'wrote']
 
@@ -67,7 +67,7 @@ class Utils(interactions.ext.autosharder.ShardedExtension):
             return await context.send('Your guild has disabled this command')
 
         # Work out latency and respond.
-        ping = f"{self.bot._clients[0].latency * 1:.0f}"
+        ping = f"{self.bot.latency * 1:.0f}"
 
         if int(ping) < int(99):
             colour = 0x57F287
@@ -119,7 +119,7 @@ class Utils(interactions.ext.autosharder.ShardedExtension):
 
         version = VERSION
         support_server = SUPPORT_SERVER
-        latency = f"{self.bot._clients[0].latency * 1:.0f}ms"
+        latency = f"{self.bot.latency * 1:.0f}ms"
 
         # Embedded message response.
         fields = [

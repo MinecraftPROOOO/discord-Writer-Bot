@@ -6,7 +6,7 @@ from models.project import Project
 from models.user import User
 from validator_collection import checkers
 
-class ProjectCommand(interactions.ext.autosharder.ShardedExtension):
+class ProjectCommand(interactions.Extension):
 
     MAX_MESSAGES = 2
     MAX_MESSAGE_LENGTH = 2500
